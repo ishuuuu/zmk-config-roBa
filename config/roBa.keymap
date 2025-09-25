@@ -79,6 +79,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        encoder_msc_down_up: encoder_msc_down_up {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MSC_DOWN_UP";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            tap-ms = <20>;
+        };
+
     };
 
     keymap {
@@ -91,6 +100,8 @@
 &kp Z           &kp X         &kp C         &kp V          &kp B  &kp COLON          &kp A      &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp LEFT_SHIFT  &kp LEFT_WIN  &kp LEFT_ALT  &mt LCTRL F13  &mo 3  &mo 4              &kp SPACE  &lt 2 F14                             &kp RIGHT_SHIFT
             >;
+
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         default_layer_mac {
@@ -100,6 +111,8 @@
 &kp Z           &kp X         &kp C         &kp V          &kp B  &kp COLON          &kp A      &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp LEFT_SHIFT  &kp LEFT_WIN  &kp LEFT_ALT  &mt LCTRL F13  &mo 3  &mo 4              &kp SPACE  &lt 2 F14                             &kp RIGHT_SHIFT
             >;
+
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         NUM {
