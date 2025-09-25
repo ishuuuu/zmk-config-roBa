@@ -27,34 +27,7 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
-        };
-
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
-        };
-
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
-        };
-
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
-        };
-
-        eq {
-            bindings = <&kp EQUAL>;
-            key-positions = <24 25>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     macros {
         to_layer_0: to_layer_0 {
@@ -67,8 +40,33 @@
         kill_to_bol: kill_to_bol {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp HOME>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp LC(X)>;
+
             label = "KILL_TO_BOL";
+        };
+
+        kill_to_eol: kill_to_eol {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp END>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp LC(X)>;
+
+            label = "KILL_TO_EOL";
         };
     };
 
@@ -88,7 +86,7 @@
 
         default_layer_win {
             bindings = <
-&kp Q           &kp W         &kp E         &kp R          &kp T                                &kp Y      &kp U  &kp S      &kp O    &kp P
+&kp Q           &kp W         &kp E         &kp R          &kp T                                &kp Y      &kp U  &kp I      &kp O    &kp P
 &kp A           &kp S         &kp D         &kp F          &kp G  &kp LS(LG(S))      &kp MINUS  &kp H      &kp J  &kp K      &kp L    &kp SEMICOLON
 &kp Z           &kp X         &kp C         &kp V          &kp B  &kp COLON          &kp A      &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp LEFT_SHIFT  &kp LEFT_WIN  &kp LEFT_ALT  &mt LCTRL F13  &mo 3  &mo 4              &kp SPACE  &lt 2 F14                             &kp RIGHT_SHIFT
@@ -106,19 +104,19 @@
 
         NUM {
             bindings = <
-&kp PIPE           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS                                               &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH
-&kp DOUBLE_QUOTES  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS   &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp DOLLAR       &kp PERCENT   &kp CARET             &kp LEFT_BRACKET       &kp RIGHT_BRACKET
-&kp SQT            &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL  &kp EQUAL                    &trans          &kp EXCLAMATION  &kp AT_SIGN   &kp HASH              &kp LEFT_BRACE         &kp RIGHT_BRACE
-&kp UNDERSCORE     &kp KP_N0        &kp PERIOD       &trans           &trans     &trans                       &trans          &trans                                                                      &kp TILDE
+&kp PIPE           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS                                               &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH
+&kp DOUBLE_QUOTES  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PLUS   &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp DOLLAR       &kp PERCENT   &kp CARET             &kp LEFT_BRACKET       &kp RIGHT_BRACKET
+&kp SQT            &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL  &kp EQUAL                    &trans          &kp EXCLAMATION  &kp AT_SIGN   &kp HASH              &kp LEFT_BRACE         &kp RIGHT_BRACE
+&kp UNDERSCORE     &kp NUMBER_0  &kp PERIOD    &trans        &trans     &trans                       &trans          &trans                                                                      &kp TILDE
             >;
         };
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LC(X)     &kp END       &trans           &kp TAB                                &kp LC(V)       &trans   &trans  &trans   &kp UP_ARROW
-&kp HOME        &kp F9        &kp DELETE    &kp RIGHT_ARROW  &kp F10         &trans      &trans     &kp BACKSPACE   &kp F11  &trans  &kp F12  &trans
-&kp F1          &kp F2        &kp F3        &kp F4           &kp LEFT_ARROW  &trans      &trans     &kp DOWN_ARROW  &kp F5   &kp F6  &kp F7   &kp F8
-&kp LEFT_SHIFT  &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL        &trans          &trans      &kp ENTER  &trans                                    &kp RIGHT_SHIFT
+&kp ESCAPE      &kp LC(X)     &kp END       &trans           &kp TAB                                &kp LC(V)       &kill_to_bol  &trans        &trans   &kp UP_ARROW
+&kp HOME        &kp F9        &kp DELETE    &kp RIGHT_ARROW  &kp F10         &trans      &trans     &kp BACKSPACE   &kp F11       &kill_to_eol  &kp F12  &trans
+&kp F1          &kp F2        &kp F3        &kp F4           &kp LEFT_ARROW  &trans      &trans     &kp DOWN_ARROW  &kp F5        &kp F6        &kp F7   &kp F8
+&kp LEFT_SHIFT  &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL        &trans          &trans      &kp ENTER  &trans                                               &kp RIGHT_SHIFT
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
