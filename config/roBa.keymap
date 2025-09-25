@@ -11,7 +11,7 @@
 
 &trackball {
     automouse-layer = <4>;
-    scroll-layers = <5>;
+    scroll-layers = <3>;
 
     // arrows {
     //     layers = <3>;
@@ -128,15 +128,6 @@
 &kp LC(LA(DELETE))  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1        &msc SCRL_DOWN  &mkp MB2         &trans
 &trans              &trans  &trans  &trans  &trans  &trans      &trans  &trans  &msc SCRL_LEFT  &mkp MB3        &msc SCRL_RIGHT  &trans
 &trans              &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                   &trans
-            >;
-        };
-
-        SCROLL {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
     };
