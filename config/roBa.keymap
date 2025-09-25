@@ -124,10 +124,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &mkp MB4        &msc SCRL_UP    &mkp MB5         &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1        &msc SCRL_DOWN  &mkp MB2         &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &msc SCRL_LEFT  &mkp MB3        &msc SCRL_RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                   &trans
+&trans              &trans  &trans  &trans  &trans                      &trans  &mkp MB4        &msc SCRL_UP    &mkp MB5         &trans
+&kp LC(LA(DELETE))  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1        &msc SCRL_DOWN  &mkp MB2         &trans
+&trans              &trans  &trans  &trans  &trans  &trans      &trans  &trans  &msc SCRL_LEFT  &mkp MB3        &msc SCRL_RIGHT  &trans
+&trans              &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                   &trans
             >;
         };
 
