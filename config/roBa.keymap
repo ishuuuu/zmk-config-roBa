@@ -11,6 +11,7 @@
 
 &trackball {
     // automouse-layer = <4>;
+
     scroll-layers = <3>;
 
     // arrows {
@@ -85,9 +86,9 @@
             label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             tap-ms = <20>;
         };
-
     };
 
     keymap {
@@ -95,10 +96,10 @@
 
         default_layer_win {
             bindings = <
-&kp Q           &kp W         &kp E         &kp R          &kp T                                &kp Y      &kp U  &kp I      &kp O    &kp P
-&kp A           &kp S         &kp D         &kp F          &kp G  &kp A              &kp MINUS  &kp H      &kp J  &kp K      &kp L    &kp SEMICOLON
-&kp Z           &kp X         &kp C         &kp V          &kp B  &kp COLON          &kp A      &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LEFT_SHIFT  &kp LEFT_WIN  &kp LEFT_ALT  &mt LCTRL F13  &mo 3  &mo 4              &kp SPACE  &lt 2 F14                             &mo 4
+&kp Q           &kp W         &kp E         &kp R          &kp T                            &kp Y      &kp U  &kp I      &kp O    &kp P
+&kp A           &kp S         &kp D         &kp F          &kp G  &kp A          &kp MINUS  &kp H      &kp J  &kp K      &kp L    &kp SEMICOLON
+&kp Z           &kp X         &kp C         &kp V          &kp B  &kp COLON      &kp A      &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LEFT_SHIFT  &kp LEFT_WIN  &kp LEFT_ALT  &mt LCTRL F13  &mo 3  &mo 4          &kp SPACE  &lt 2 F14                             &mo 4
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -126,10 +127,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LC(X)     &kp END       &trans           &kp TAB                                &kp LC(V)       &kill_to_bol  &trans        &trans   &kp UP_ARROW
-&kp HOME        &kp F9        &kp DELETE    &kp RIGHT_ARROW  &kp F10         &trans      &trans     &kp BACKSPACE   &kp F11       &kill_to_eol  &kp F12  &trans
-&kp F1          &kp F2        &kp F3        &kp F4           &kp LEFT_ARROW  &trans      &trans     &kp DOWN_ARROW  &kp F5        &kp F6        &kp F7   &kp F8
-&kp LEFT_SHIFT  &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL        &trans          &trans      &kp ENTER  &trans                                               &kp RIGHT_SHIFT
+&kp ESCAPE      &kp LC(X)     &kp END       &trans           &kp TAB                                &kp LC(V)       &kill_to_bol  &trans        &trans  &kp UP_ARROW
+&kp HOME        &trans        &kp DELETE    &kp RIGHT_ARROW  &trans          &trans      &trans     &kp BACKSPACE   &trans        &kill_to_eol  &trans  &trans
+&trans          &trans        &trans        &trans           &kp LEFT_ARROW  &trans      &trans     &kp DOWN_ARROW  &trans        &trans        &trans  &trans
+&kp LEFT_SHIFT  &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL        &trans          &trans      &kp ENTER  &trans                                              &kp RIGHT_SHIFT
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -137,10 +138,10 @@
 
         MOUSE {
             bindings = <
-&trans              &trans  &trans  &trans  &trans                      &trans  &mkp MB4        &msc SCRL_UP    &mkp MB5         &trans
-&kp LC(LA(DELETE))  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1        &msc SCRL_DOWN  &mkp MB2         &trans
-&trans              &trans  &trans  &trans  &trans  &trans      &trans  &trans  &msc SCRL_LEFT  &mkp MB3        &msc SCRL_RIGHT  &trans
-&trans              &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                   &trans
+&trans              &kp F7  &kp F8  &kp F9  &kp F10                      &trans  &mkp MB4        &msc SCRL_UP    &mkp MB5         &trans
+&kp LC(LA(DELETE))  &kp F4  &kp F5  &kp F6  &kp F11  &trans      &trans  &trans  &mkp MB1        &msc SCRL_DOWN  &mkp MB2         &trans
+&trans              &kp F1  &kp F2  &kp F3  &kp F12  &trans      &trans  &trans  &msc SCRL_LEFT  &mkp MB3        &msc SCRL_RIGHT  &trans
+&trans              &trans  &trans  &trans  &trans   &trans      &trans  &trans                                                   &trans
             >;
         };
     };
