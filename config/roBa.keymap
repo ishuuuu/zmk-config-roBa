@@ -70,6 +70,46 @@
 
             label = "KILL_TO_EOL";
         };
+
+        connect_0: connect_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&bt BT_SEL 0>, <&macro_tap>, <&to 0>;
+
+            label = "CONNECT_0";
+        };
+
+        connect_1: connect_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&bt BT_SEL 1>, <&macro_tap>, <&to 0>;
+
+            label = "CONNECT_1";
+        };
+
+        connect_2: connect_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&bt BT_SEL 2>, <&macro_tap>, <&to 1>;
+
+            label = "CONNECT_2";
+        };
+
+        connect_3: connect_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&bt BT_SEL 3>, <&macro_tap>, <&to 1>;
+
+            label = "CONNECT_3";
+        };
+
+        connect_4: connect_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&bt BT_SEL 4>, <&macro_tap>, <&to 1>;
+
+            label = "CONNECT_4";
+        };
     };
 
     behaviors {
@@ -149,7 +189,7 @@
         bluetooth {
             bindings = <
 &trans  &to 0   &trans      &trans  &trans                      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans      &trans  &trans  &trans      &trans  &trans        &trans        &trans        &trans        &trans
+&trans  &trans  &trans      &trans  &trans  &trans      &trans  &connect_0    &connect_1    &connect_2    &connect_3    &connect_4
 &trans  &trans  &bt BT_CLR  &trans  &trans  &trans      &trans  &trans        &to 1         &trans        &trans        &trans
 &trans  &trans  &trans      &trans  &trans  &trans      &trans  &trans                                                  &trans
             >;
