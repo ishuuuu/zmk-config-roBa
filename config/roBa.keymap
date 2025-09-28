@@ -197,10 +197,10 @@
 
         arrow_mac {
             bindings = <
-&kp ESCAPE      &kp LG(X)  &kp LC(E)     &trans        &kp TAB                           &kp LG(V)  &kp LC(U)  &trans     &trans     &kp LC(P)
-&kp LC(A)       &trans     &kp LC(D)     &kp LC(F)     &trans     &trans      &trans     &kp LC(H)  &trans     &kp LC(K)  &kp LC(L)  &trans
-&trans          &trans     &trans        &trans        &kp LC(B)  &trans      &trans     &kp LC(N)  &trans     &trans     &trans     &trans
-&kp LEFT_SHIFT  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &trans     &trans      &kp ENTER  &trans                                      &kp RIGHT_SHIFT
+&kp ESCAPE      &kp LG(X)  &kp LC(E)     &trans           &kp TAB                                &kp LG(V)       &kp LC(U)  &trans     &trans     &kp UP_ARROW
+&kp LC(A)       &trans     &kp LC(D)     &kp RIGHT_ARROW  &trans          &trans      &trans     &kp LC(H)       &trans     &kp LC(K)  &kp LC(L)  &trans
+&trans          &trans     &trans        &trans           &kp LEFT_ARROW  &trans      &trans     &kp DOWN_ARROW  &trans     &trans     &trans     &trans
+&kp LEFT_SHIFT  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI     &trans          &trans      &kp ENTER  &trans                                           &kp RIGHT_SHIFT
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
